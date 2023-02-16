@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o PES2UG20CS515 PES2UG20CS515.cpp'
+                sh 'make'
             }
         }
 
         stage('Test') {
             steps {
-                sh './PES2UG20CS515'
+                sh 'make test'
             }
         }
 
@@ -23,11 +23,10 @@ pipeline {
 
     post {
         always {
-            script {
-                if (currentBuild.result == "FAILURE") {
-                    echo "pipeline failed"
-                }
-            }
+            echo 'Pipeline completed'
+        }
+        failure {
+            echo 'Pipeline failed'
         }
     }
 }
