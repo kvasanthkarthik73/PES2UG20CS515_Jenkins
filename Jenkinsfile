@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying PES2UG20CS515 to production server"'
+                sh 'git push origin master'
               
             }
         }
