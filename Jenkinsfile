@@ -4,23 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make'
+                sh 'g++ -o PES2UG20CS515 PES2UG20CS515.cpp'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'make test'
+                sh '.PES2UG20CS515'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'git config --global user.email "84130461+kvasanthkarthik73@users.noreply.github.com"'
-                sh 'git config --global user.name "vasanth karthik"'
-                sh 'git add .'
-                sh 'git commit -m "Commit message"'
-                sh 'git push origin main'
+                sh 'echo "Deploying PES2UG20CS515 to production server"'
+              
             }
         }
     }
