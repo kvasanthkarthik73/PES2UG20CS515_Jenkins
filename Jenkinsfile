@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'git push'
+                sh 'make deploy'
             }
         }
     }
