@@ -14,7 +14,7 @@ sh ‘mvn test’
 echo ‘Test Stage Successful
 post {
 always {
-junit ‘target/surefire-reports/*.xml’
+junit ‘target/surefire-reports/.xml’
 }
 }
 }
