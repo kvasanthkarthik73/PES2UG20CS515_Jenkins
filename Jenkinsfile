@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'git push origin main'
+                sh 'git push -f origin main'
             }
         }
     }
