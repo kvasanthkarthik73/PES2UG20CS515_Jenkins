@@ -4,24 +4,20 @@ agent any
 stages {
 stage('Build') {
 steps {
-sh 'mn clean install'
+sh 'PES2UG20CS515-1 clean install'
 echo 'Build Stage Successful'
 }
 }
 stage('Test') {
 steps {
-sh 'mvn test'
+sh 'g++ hello.cpp -o hello'
 echo 'Test Stage Successful'
-post {
-always {
-junit 'target/surefire-reports/.xml'
-}
-}
+
 }
 }
 stage( Deploy’) {
 steps {
-sh 'mvn deploy'
+sh 'hello.cpp deploy'
 echo 'Deployment Successful'
 }
 }
